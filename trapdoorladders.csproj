@@ -1,5 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <!-- Exclude reference source files - they're for documentation only -->
+    <Compile Remove="references/**/*.cs" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latest</LangVersion>
@@ -7,19 +12,30 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin/$(Configuration)/</OutputPath>
+    <!-- Default VS install path if VINTAGE_STORY env var not set -->
+    <VintageStoryPath Condition="'$(VINTAGE_STORY)' == ''">$(APPDATA)\Vintagestory</VintageStoryPath>
+    <VintageStoryPath Condition="'$(VINTAGE_STORY)' != ''">$(VINTAGE_STORY)</VintageStoryPath>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="VintagestoryAPI">
-      <HintPath>$(VINTAGE_STORY)/VintagestoryAPI.dll</HintPath>
+      <HintPath>$(VintageStoryPath)\VintagestoryAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="VintagestoryLib" Condition="Exists('$(VINTAGE_STORY)/Mods/VintagestoryLib.dll')">
-      <HintPath>$(VINTAGE_STORY)/Mods/VintagestoryLib.dll</HintPath>
+    <Reference Include="VintagestoryLib">
+      <HintPath>$(VintageStoryPath)\VintagestoryLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>$(VINTAGE_STORY)/Mods/VSSurvivalMod.dll</HintPath>
+      <HintPath>$(VintageStoryPath)\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>$(VintageStoryPath)\Mods\VSEssentials.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(VintageStoryPath)\Lib\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -42,4 +58,3 @@
   </Target>
 
 </Project>
-

@@ -3,7 +3,7 @@
 
 param(
     [string]$Configuration = "Release",
-    [switch]$CreateZip = $false,
+    [switch]$SkipZip = $false,
     [string]$OutputDir = "dist"
 )
 
@@ -144,8 +144,8 @@ foreach ($file in $additionalFiles) {
 
 Write-Host "`nDistribution package created in: $OutputDir" -ForegroundColor Green
 
-# Create zip file if requested
-if ($CreateZip) {
+# Create zip file (enabled by default, use -SkipZip to disable)
+if (-not $SkipZip) {
     $zipName = "$modId-v$version.zip"
     $zipPath = Join-Path (Get-Location) $zipName
     
@@ -166,7 +166,6 @@ if ($CreateZip) {
 } else {
     Write-Host "`nMod is ready for testing!" -ForegroundColor Cyan
     Write-Host "  Copy the contents of '$OutputDir' to your Vintage Story Mods folder" -ForegroundColor Gray
-    Write-Host "  Or run with -CreateZip to generate a distribution zip file" -ForegroundColor Gray
 }
 
 Write-Host "`nBuild complete!" -ForegroundColor Green

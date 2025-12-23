@@ -1,15 +1,15 @@
 {
   "type": "code",
   "modid": "trapdoorladders",
-  "name": "Trapdoor Ladder Mod",
-  "description": "A logic mod for Vintage Story",
+  "name": "Trapdoor Ladders",
+  "description": "Makes open trapdoors climbable when placed above or below a ladder, just like in Minecraft.",
   "authors": [
-    "YourName"
+    "Reese Norris"
   ],
   "version": "1.0.0",
   "dependencies": {
-    "game": "1.19.0"
+    "game": "1.21.6",
+    "survival": "1.21.6"
   },
   "website": "https://mods.vintagestory.at/trapdoorladders"
 }
-
