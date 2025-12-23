@@ -1,0 +1,15 @@
+{
+  "type": "code",
+  "modid": "trapdoorladders",
+  "name": "Trapdoor Ladder Mod",
+  "description": "A logic mod for Vintage Story",
+  "authors": [
+    "YourName"
+  ],
+  "version": "1.0.0",
+  "dependencies": {
+    "game": "1.19.0"
+  },
+  "website": "https://mods.vintagestory.at/trapdoorladders"
+}
+
