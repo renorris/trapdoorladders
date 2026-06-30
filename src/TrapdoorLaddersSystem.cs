@@ -146,20 +146,20 @@ namespace TrapdoorLadders
 
                 if (wantsToDescend)
                 {
-                    if (agent.SidedPos.Motion.Y < 0)
+                    if (agent.Pos.Motion.Y < 0)
                     {
-                        agent.SidedPos.Motion.Y = 0;
+                        agent.Pos.Motion.Y = 0;
                     }
                 }
                 else if (wantsToClimb)
                 {
-                    agent.SidedPos.Motion.Y = 0.04;
+                    agent.Pos.Motion.Y = 0.04;
                 }
                 else
                 {
-                    if (agent.SidedPos.Motion.Y < 0)
+                    if (agent.Pos.Motion.Y < 0)
                     {
-                        agent.SidedPos.Motion.Y = 0;
+                        agent.Pos.Motion.Y = 0;
                     }
                 }
             }

@@ -6,10 +6,10 @@
   "authors": [
     "Reese Norris"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
-    "game": "1.21.6",
-    "survival": "1.21.6"
+    "game": "1.22.3",
+    "survival": "1.22.3"
   },
   "website": "https://mods.vintagestory.at/trapdoorladders"
 }
